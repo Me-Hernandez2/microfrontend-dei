@@ -1,5 +1,6 @@
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { Route } from '@angular/router';
+import {authGuard} from "../../../shared/guards/authGuard";
 
 export const appRoutes: Route[] = [
   {
@@ -9,6 +10,7 @@ export const appRoutes: Route[] = [
   {
     path: 'home',
     loadChildren: () => import('home/Routes').then((m) => m.remoteRoutes),
+    canActivate: [authGuard]
   },
   {
     path: '',

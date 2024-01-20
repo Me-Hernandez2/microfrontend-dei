@@ -2,7 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'microfrontend-dei-nx-welcome',
+  selector: 'home-welcome',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -885,4 +885,4 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class HomeWelcome {}

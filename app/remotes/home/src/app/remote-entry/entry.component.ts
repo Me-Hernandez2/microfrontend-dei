@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { HomeWelcome } from './home-welcome';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, HomeWelcome],
   selector: 'microfrontend-dei-home-entry',
-  template: `<microfrontend-dei-nx-welcome></microfrontend-dei-nx-welcome>`,
+  template: `<home-welcome></home-welcome>`,
 })
 export class RemoteEntryComponent {}
