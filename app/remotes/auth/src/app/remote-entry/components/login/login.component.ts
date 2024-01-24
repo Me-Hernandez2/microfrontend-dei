@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {NgZorroComponentsModule} from "../../../../../../../shared/antd-module/ng-zorro-components.module";
 import {FormControl, FormGroup, NonNullableFormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -13,11 +13,12 @@ import {SharedModule} from "../../../../../../../shared/shared-module/shared.mod
   standalone: true,
   imports: [CommonModule,
     NgZorroComponentsModule,
-    HttpClientModule,
-    //SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     LoginService,
+
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
@@ -34,7 +35,8 @@ export class LoginComponent {
   constructor(private fb: NonNullableFormBuilder,
               private router: Router,
               private loginService$: LoginService
-              ) {}
+  ) {
+  }
 
   submitForm(): void {
     if (this.validateForm.valid) {
@@ -43,9 +45,9 @@ export class LoginComponent {
         password: this.validateForm.get('password')!.value
       }
       //AQUI DEJO EL LOGEO FALSO CON LA API DE PRUEBA, ES UNA SIMULACION CON PETICION
-      if(request.username == 'test@gmail.com' && request.password == '1234'){
+      if (request.username == 'test@gmail.com' && request.password == '1234') {
         this.sendLogin();
-      }else{
+      } else {
         alert("Usuario no existe")
       }
 
@@ -53,18 +55,18 @@ export class LoginComponent {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {
           control.markAsDirty();
-          control.updateValueAndValidity({ onlySelf: true });
+          control.updateValueAndValidity({onlySelf: true});
         }
       });
     }
   }
 
-  sendLogin(){
-    this.loginService$.login().subscribe( (res:any) => {
-      if(!!res.name){
+  sendLogin() {
+    this.loginService$.login().subscribe((res: any) => {
+      if (!!res.name) {
         sessionStorage.setItem('token', res.name);
-        this.router.navigate(['home'])
-      }else{
+        this.router.navigate(['deii'])
+      } else {
         alert("error de logueo")
       }
     })

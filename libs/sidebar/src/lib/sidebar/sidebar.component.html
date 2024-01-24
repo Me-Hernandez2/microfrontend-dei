@@ -1,0 +1,75 @@
+<nav class="app-sidebar">
+  <div class="sidebar-content">
+    <div class="d-none sidebar-item icon icon-home-alt" routerLink="/" nz-tooltip nzTooltipTitle="Inicio" nzTooltipPlacement="right"></div>
+    <div class="sidebar-item icon icon-notebook-flat" (click)="toggleSubMenu(1)" [class.active]="activeSubMenu === 1" nz-tooltip nzTooltipTitle="Gestionar detecciones" nzTooltipPlacement="right"><span nz-icon nzType="apple" nzTheme="outline"></span></div>
+    <div class="d-none sidebar-item icon icon-look-check-flat" (click)="toggleSubMenu(2)" [class.active]="activeSubMenu === 2" nz-tooltip nzTooltipTitle="Gestionar infracciones" nzTooltipPlacement="right"></div>
+    <div class="d-none sidebar-item icon icon-leaf-alt" (click)="toggleSubMenu(3)" [class.active]="activeSubMenu === 3" nz-tooltip nzTooltipTitle="Reportes" nzTooltipPlacement="right"></div>
+    <div class="d-none sidebar-item icon icon-user-cog-o" (click)="toggleSubMenu(4)" [class.active]="activeSubMenu === 4" nz-tooltip nzTooltipTitle="Administración" nzTooltipPlacement="right"></div>
+    <div class="d-none sidebar-item icon icon-password-alt" (click)="toggleSubMenu(5)" [class.active]="activeSubMenu === 5" nz-tooltip nzTooltipTitle="Seguridad y auditoría" nzTooltipPlacement="right"></div>
+  </div>
+</nav>
+
+<div class="nav-item" id="gestionarDetecciones" [class.active]="activeSubMenu === 1">
+  <p class="menu-title">Gestionar detecciones</p>
+  <ul>
+    <li routerLink="/review">Revisión de detecciones</li>
+    <li class="d-none">Completar datos</li>
+    <li class="d-none">Verificar datos</li>
+    <li class="d-none">Visualización de deteccioness</li>
+    <li class="d-none">Reasignar procesos</li>
+    <li class="d-none">Auditar detecciones</li>
+    <li class="d-none">Anular detecciones pico y placa</li>
+    <li class="d-none">Administrar exentos</li>
+  </ul>
+</div>
+<div class="nav-item" id="gestionarInfracciones" [class.active]="activeSubMenu === 2">
+  <p class="menu-title">Gestionar infracciones</p>
+  <ul>
+    <li class="">Registrar notificación</li>
+    <li class="">Revisar comparendos</li>
+    <li class="">Registrar correspondencia</li>
+    <li class="">Gestionar anulación de comparendos</li>
+    <li class="">Imprimir documentos</li>
+    <li class="">Enviar correspondencia</li>
+    <li class="">Aprobación y firma de comparendos</li>
+    <li class="">Firma digital de documentos</li>
+    <li class="">Cambiar implicado</li>
+    <li class="">Generar oficios por Secretaría</li>
+  </ul>
+</div>
+<div class="nav-item" id="reportes" [class.active]="activeSubMenu === 3">
+  <p class="menu-title">Reportes</p>
+  <ul>
+    <li class="">Consultar detecciones</li>
+    <li class="">Consultar proceso detecciones</li>
+    <li class="">Consultar detecciones <br>anuladas por imágenes</li>
+    <li class="">Consultar detecciones <br>anuladas</li>
+    <li class="">Consultar correspondencia</li>
+    <li class="">Consultar implicado</li>
+    <li class="">Generar reportes</li>
+  </ul>
+</div>
+<div class="nav-item" id="administracion" [class.active]="activeSubMenu === 4">
+  <p class="menu-title">Administración</p>
+  <ul>
+    <li class="">Administrar catálogos</li>
+    <li class="">Consultar resultado procesamiento</li>
+    <li class="">Administrar cámaras</li>
+    <li class="">Administrar parámetros</li>
+    <li class="">Administrar validaciones</li>
+    <li class="">Consultar logs</li>
+    <li class="">Administrar estados <br>notificación</li>
+    <li class="">Administrar tipo de <br>anulaciones</li>
+    <li class="">Administrar empresas transportadoras</li>
+    <li class="">Administrar empresas leasing</li>
+    <li class="">Administrar configuración de pico y placa</li>
+  </ul>
+</div>
+<div class="nav-item" id="seguridadAuditoria" [class.active]="activeSubMenu === 5">
+  <p class="menu-title">Seguridad y auditoría</p>
+  <ul>
+    <li class="">Administrar perfiles</li>
+    <li class="">Administrar usuarios</li>
+    <li class="">Auditoría</li>
+  </ul>
+</div>

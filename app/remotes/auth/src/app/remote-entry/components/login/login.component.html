@@ -2,7 +2,7 @@
   <div nz-col nzSpan="24" class="center-card text-center">
     <nz-card class="card-frost" style="width:300px;">
       <h1>Bienvenido!</h1>
-      <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+      <form nz-form [formGroup]="validateForm" class="login-form">
         <nz-form-item>
           <nz-form-control nzErrorTip="Por favor ingrese su nombre de usuario!">
             <nz-input-group>
@@ -17,7 +17,7 @@
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
-        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Ingresar</button>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="submitForm()">Ingresar</button>
         <a>Registrarse ahora!</a>
       </form>
     </nz-card>

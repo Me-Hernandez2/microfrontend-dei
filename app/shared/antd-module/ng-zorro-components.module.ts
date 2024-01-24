@@ -16,12 +16,16 @@ import { NzStepsModule } from 'ng-zorro-antd/steps';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import {NzDropDownModule} from "ng-zorro-antd/dropdown";
+import {BrowserModule} from "@angular/platform-browser";
+import {HttpClientModule} from "@angular/common/http";
+import {NzProgressModule} from "ng-zorro-antd/progress";
+import {NzSelectModule} from "ng-zorro-antd/select";
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     NzGridModule,
     NzCardModule,
@@ -37,7 +41,10 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzStepsModule,
     NzListModule,
     NzTableModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzDropDownModule,
+    NzProgressModule,
+    NzSelectModule
   ],
   exports:[
     ReactiveFormsModule,
@@ -55,7 +62,10 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzStepsModule,
     NzListModule,
     NzTableModule,
-    NzTypographyModule
+    NzTypographyModule,
+    NzDropDownModule,
+    NzProgressModule,
+    NzSelectModule
   ]
 })
 export class NgZorroComponentsModule {

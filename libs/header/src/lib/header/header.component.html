@@ -1,0 +1,32 @@
+<header class="app-header">
+  <div class="header-content">
+    <div class="img-content">
+      <!--<img src="./assets/images/logo-dei-negativo.png" alt="Logo-Dei" routerLink="/">-->
+      <div class="my-image"></div>
+    </div>
+    <div class="dropdown-content">
+      <span>Fecha actual <span class="fecha" id="fecha">11/10/2023</span></span>
+      <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+        Nombre usuario
+        <i class="icon icon-arrow"></i>
+      </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu" class="custom-dropdown-menu">
+        <ul nz-menu class="custom-menu">
+          <li nz-menu-item>
+            <div class="custom-menu-item">
+              <i class="icon icon-file-question"></i>
+              <span>Ayudas</span>
+            </div>
+          </li>
+          <li nz-menu-item>
+            <div class="custom-menu-item">
+              <i class="icon icon-sign-out-o"></i>
+              <span>Cerrar sesión</span>
+            </div>
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+  </div>
+</header>
+
