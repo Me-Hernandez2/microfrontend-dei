@@ -1,7 +1,7 @@
 <nav class="app-sidebar">
   <div class="sidebar-content">
-    <div class="d-none sidebar-item icon icon-home-alt" routerLink="/" nz-tooltip nzTooltipTitle="Inicio" nzTooltipPlacement="right">H</div>
-    <div class="sidebar-item icon icon-notebook-flat" (click)="toggleSubMenu(1)" [class.active]="activeSubMenu === 1" nz-tooltip nzTooltipTitle="Gestionar detecciones" nzTooltipPlacement="right">D<span nz-icon nzType="apple" nzTheme="outline"></span></div>
+    <div class="d-none sidebar-item" routerLink="/" nz-tooltip nzTooltipTitle="Inicio" nzTooltipPlacement="right"><i class="fa-solid fa-house"></i><span nz-icon nzType="home" nzTheme="outline"></span></div>
+    <div class="sidebar-item icon icon-notebook-flat" (click)="toggleSubMenu(1)" [class.active]="activeSubMenu === 1" nz-tooltip nzTooltipTitle="Gestionar detecciones" nzTooltipPlacement="right">D</div>
     <div class="d-none sidebar-item icon icon-look-check-flat" (click)="toggleSubMenu(2)" [class.active]="activeSubMenu === 2" nz-tooltip nzTooltipTitle="Gestionar infracciones" nzTooltipPlacement="right">M1</div>
     <div class="d-none sidebar-item icon icon-leaf-alt" (click)="toggleSubMenu(3)" [class.active]="activeSubMenu === 3" nz-tooltip nzTooltipTitle="Reportes" nzTooltipPlacement="right">M2</div>
     <div class="d-none sidebar-item icon icon-user-cog-o" (click)="toggleSubMenu(4)" [class.active]="activeSubMenu === 4" nz-tooltip nzTooltipTitle="Administración" nzTooltipPlacement="right">M3</div>
@@ -12,7 +12,7 @@
 <div class="nav-item" id="gestionarDetecciones" [class.active]="activeSubMenu === 1">
   <p class="menu-title">Gestionar detecciones</p>
   <ul>
-    <li routerLink="/review">Revisión de detecciones</li>
+    <li routerLink="/detecciones">Revisión de detecciones</li>
     <li class="d-none">Completar datos</li>
     <li class="d-none">Verificar datos</li>
     <li class="d-none">Visualización de deteccioness</li>

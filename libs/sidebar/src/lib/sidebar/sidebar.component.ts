@@ -2,17 +2,18 @@ import {Component, HostListener} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgZorroComponentsModule} from "../../../../../app/shared/antd-module/ng-zorro-components.module";
 import {RouterLink} from "@angular/router";
-import {NzIconModule} from "ng-zorro-antd/icon";
 import {HttpClientModule} from "@angular/common/http";
+
 
 @Component({
   selector: 'microfrontend-dei-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterLink, NgZorroComponentsModule],
+  imports: [CommonModule, RouterLink, NgZorroComponentsModule, HttpClientModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.sass',
 })
 export class SidebarComponent {
+
   activeSubMenu: number | null = null;
 
   @HostListener('document:click', ['$event'])

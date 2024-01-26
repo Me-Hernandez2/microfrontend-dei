@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { IconDefinition } from '@ant-design/icons-angular';
+import { AccountBookFill, AlertFill, AlertOutline } from '@ant-design/icons-angular/icons';
 import { ReactiveFormsModule } from '@angular/forms';
 import {NzGridModule} from 'ng-zorro-antd/grid';
 import {NzCardModule} from 'ng-zorro-antd/card';
@@ -17,11 +18,12 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import {NzDropDownModule} from "ng-zorro-antd/dropdown";
-import {BrowserModule} from "@angular/platform-browser";
-import {HttpClientModule} from "@angular/common/http";
 import {NzProgressModule} from "ng-zorro-antd/progress";
 import {NzSelectModule} from "ng-zorro-antd/select";
-
+import {NzToolTipModule} from "ng-zorro-antd/tooltip";
+import {NzCollapseModule} from "ng-zorro-antd/collapse";
+import {HttpClientModule} from "@angular/common/http";
+const icons: IconDefinition[] = [ AccountBookFill, AlertOutline, AlertFill ];
 
 @NgModule({
   declarations: [],
@@ -35,7 +37,7 @@ import {NzSelectModule} from "ng-zorro-antd/select";
     NzLayoutModule,
     NzAvatarModule,
     NzMenuModule,
-    NzIconModule,
+    NzIconModule.forRoot(icons),
     NzDividerModule,
     NzNotificationModule,
     NzStepsModule,
@@ -44,7 +46,9 @@ import {NzSelectModule} from "ng-zorro-antd/select";
     NzTypographyModule,
     NzDropDownModule,
     NzProgressModule,
-    NzSelectModule
+    NzSelectModule,
+    NzToolTipModule,
+    NzCollapseModule,
   ],
   exports:[
     ReactiveFormsModule,
@@ -65,7 +69,9 @@ import {NzSelectModule} from "ng-zorro-antd/select";
     NzTypographyModule,
     NzDropDownModule,
     NzProgressModule,
-    NzSelectModule
+    NzSelectModule,
+    NzToolTipModule,
+    NzCollapseModule
   ]
 })
 export class NgZorroComponentsModule {

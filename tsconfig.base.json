@@ -20,10 +20,14 @@
       "@microfrontend-dei/sidebar": ["libs/sidebar/src/index.ts"],
       "@microfrontend-dei/subheader": ["libs/subheader/src/index.ts"],
       "auth/Routes": ["app/remotes/auth/src/app/remote-entry/entry.routes.ts"],
+      "detecciones/Routes": [
+        "app/remotes/detecciones/src/app/remote-entry/entry.routes.ts"
+      ],
       "gestionar-detecciones/Routes": [
         "app/remotes/gestionar-detecciones/src/app/remote-entry/entry.routes.ts"
       ],
-      "home/Routes": ["app/remotes/home/src/app/remote-entry/entry.routes.ts"]
+      "home/Routes": ["app/remotes/home/src/app/remote-entry/entry.routes.ts"],
+      "test/Routes": ["app/remotes/test/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

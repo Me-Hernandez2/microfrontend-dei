@@ -8,12 +8,8 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('auth/Routes').then((m) => m.remoteRoutes),
   },
   {
-    path: 'deii',
+    path: '',
     loadChildren: () => import('home/Routes').then((m) => m.remoteRoutes),
     canActivate: [authGuard],
-  },
-  {
-    path: '',
-    component: NxWelcomeComponent,
   },
 ];

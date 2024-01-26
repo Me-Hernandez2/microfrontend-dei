@@ -16,6 +16,7 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
       if (event.type === HttpEventType.Response) {
         //Logica para cuando sale la peticion bien
         console.log('interceptado')
+        messageService$.create('success', `Peticion realizada correctamente`);
       }
     }),
     catchError((error) => {
