@@ -4,6 +4,10 @@ import { authGuard } from '../../../shared/guards/authGuard';
 
 export const appRoutes: Route[] = [
   {
+    path: 'event',
+    loadChildren: () => import('event/Routes').then((m) => m.remoteRoutes),
+  },
+  {
     path: 'auth',
     loadChildren: () => import('auth/Routes').then((m) => m.remoteRoutes),
   },

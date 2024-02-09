@@ -1,0 +1,110 @@
+{
+  "name": "event",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "microfrontend-dei",
+  "sourceRoot": "app/remotes/testEvents/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/app/remotes/testEvents",
+        "index": "app/remotes/testEvents/src/index.html",
+        "main": "app/remotes/testEvents/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "app/remotes/testEvents/tsconfig.app.json",
+        "inlineStyleLanguage": "sass",
+        "assets": [
+          "app/remotes/testEvents/src/favicon.ico",
+          "app/remotes/testEvents/src/assets"
+        ],
+        "styles": ["app/remotes/testEvents/src/styles.sass"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "app/remotes/testEvents/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "app/remotes/testEvents/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4204,
+        "publicHost": "http://localhost:4204"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "event:build:production"
+        },
+        "development": {
+          "buildTarget": "event:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "event:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "app/remotes/testEvents/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "event:build",
+        "port": 4204,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "event:build:development"
+        },
+        "production": {
+          "buildTarget": "event:build:production"
+        }
+      }
+    }
+  }
+}

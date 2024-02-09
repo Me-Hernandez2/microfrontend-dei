@@ -15,6 +15,85 @@ import {HttpClientModule} from "@angular/common/http";
 export class SidebarComponent {
 
   activeSubMenu: number | null = null;
+  menuItems = [
+    {
+      id: "gestionarDetecciones",
+      title: "Gestionar detecciones",
+      activeSubMenu: 1,
+      items: [
+        { name: "Revisión de detecciones", route: "/detecciones" },
+        { name: "Completar datos", route: "/" },
+        { name: "Verificar datos", route: "/" },
+        { name: "Visualización de detecciones", route: "/" },
+        { name: "Reasignar procesos", route: "/" },
+        { name: "Auditar detecciones", route: "/" },
+        { name: "Anular detecciones pico y placa", route: "/" },
+        { name: "Administrar exentos", route: "/" }
+      ]
+    },
+    {
+      id: "gestionarInfracciones",
+      title: "Gestionar infracciones",
+      activeSubMenu: 2,
+      items: [
+        { name: "Registrar notificación", route: "/" },
+        { name: "Revisar comparendos", route: "/" },
+        { name: "Registrar correspondencia", route: "/" },
+        { name: "Gestionar anulación de comparendos", route: "/" },
+        { name: "Imprimir documentos", route: "/" },
+        { name: "Enviar correspondencia", route: "/" },
+        { name: "Aprobación y firma de comparendos", route: "/" },
+        { name: "Firma digital de documentos", route: "/" },
+        { name: "Cambiar implicado", route: "/" },
+        { name: "Generar oficios por Secretaría", route: "/" }
+      ]
+    },
+    {
+      id: "reportes",
+      title: "Reportes",
+      activeSubMenu: 3,
+      items: [
+        { name: "Consultar detecciones", route: "/" },
+        { name: "Consultar proceso detecciones", route: "/" },
+        { name: "Consultar detecciones anuladas por imágenes", route: "/" },
+        { name: "Consultar detecciones anuladas", route: "/" },
+        { name: "Consultar correspondencia", route: "/" },
+        { name: "Consultar implicado", route: "/" },
+        { name: "Generar reportes", route: "/" }
+      ]
+    },
+    {
+      id: "administracion",
+      title: "Administración",
+      activeSubMenu: 4,
+      items: [
+        { name: "Administrar catálogos", route: "/" },
+        { name: "Consultar resultado procesamiento", route: "/" },
+        { name: "Administrar cámaras", route: "/" },
+        { name: "Administrar parámetros", route: "/" },
+        { name: "Administrar validaciones", route: "/" },
+        { name: "Consultar logs", route: "/" },
+        { name: "Administrar estados notificación", route: "/" },
+        { name: "Administrar tipo de anulaciones", route: "/" },
+        { name: "Administrar empresas transportadoras", route: "/" },
+        { name: "Administrar empresas leasing", route: "/" },
+        { name: "Administrar configuración de pico y placa", route: "/" }
+      ]
+    },
+    {
+      id: "seguridadAuditoria",
+      title: "Seguridad y auditoría",
+      activeSubMenu: 5,
+      items: [
+        { name: "Administrar perfiles", route: "/" },
+        { name: "Administrar usuarios", route: "/" },
+        { name: "Auditoría", route: "/" }
+      ]
+    }
+  ];
+
+
+
 
   @HostListener('document:click', ['$event'])
   handleDocumentClick(event: Event): void {

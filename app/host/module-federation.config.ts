@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['home', 'auth', 'gestionar-detecciones', 'detecciones'],
+  remotes: ['home', 'auth', 'gestionar-detecciones', 'event'],
 };
 
 export default config;

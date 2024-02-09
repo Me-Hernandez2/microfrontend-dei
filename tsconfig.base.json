@@ -20,8 +20,8 @@
       "@microfrontend-dei/sidebar": ["libs/sidebar/src/index.ts"],
       "@microfrontend-dei/subheader": ["libs/subheader/src/index.ts"],
       "auth/Routes": ["app/remotes/auth/src/app/remote-entry/entry.routes.ts"],
-      "detecciones/Routes": [
-        "app/remotes/detecciones/src/app/remote-entry/entry.routes.ts"
+      "event/Routes": [
+        "app/remotes/testEvents/src/app/remote-entry/entry.routes.ts"
       ],
       "gestionar-detecciones/Routes": [
         "app/remotes/gestionar-detecciones/src/app/remote-entry/entry.routes.ts"

@@ -9,6 +9,7 @@
   </div>
 </nav>
 
+<!--
 <div class="nav-item" id="gestionarDetecciones" [class.active]="activeSubMenu === 1">
   <p class="menu-title">Gestionar detecciones</p>
   <ul>
@@ -71,5 +72,12 @@
     <li class="">Administrar perfiles</li>
     <li class="">Administrar usuarios</li>
     <li class="">Auditoría</li>
+  </ul>
+</div>
+-->
+<div *ngFor="let menuItem of menuItems" class="nav-item" [class.active]="activeSubMenu === menuItem.activeSubMenu">
+  <p class="menu-title">{{ menuItem.title }}</p>
+  <ul>
+    <li *ngFor="let item of menuItem.items" routerLink="{{item.route}}">{{ item.name }}</li>
   </ul>
 </div>

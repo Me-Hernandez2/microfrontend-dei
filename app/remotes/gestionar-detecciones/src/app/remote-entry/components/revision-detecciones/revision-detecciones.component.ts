@@ -2,15 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgZorroComponentsModule} from "../../../../../../../shared/antd-module/ng-zorro-components.module";
 import {FormsModule} from "@angular/forms";
+import {TestComunicacionComponent} from "../../../../../../testEvents/src/app/remote-entry/components/testComunicacion/testComunicacion.component";
 
 @Component({
   selector: 'microfrontend-dei-revision-detecciones',
   standalone: true,
-  imports: [CommonModule, FormsModule, NgZorroComponentsModule],
+  imports: [CommonModule, FormsModule, NgZorroComponentsModule, TestComunicacionComponent],
   templateUrl: './revision-detecciones.component.html',
   styleUrl: './revision-detecciones.component.sass',
 })
+
 export class RevisionDeteccionesComponent implements OnInit {
+
 
   // Array de URLs de imágenes
   images: string[] = [
@@ -29,6 +32,7 @@ export class RevisionDeteccionesComponent implements OnInit {
   mostrarObservacionesSi: boolean = false;
   mostrarObservacionesNo: boolean = false;
   selectedValue = null;
+
 
   // Método llamado al cambiar el valor del radio
   onRadioChange() {

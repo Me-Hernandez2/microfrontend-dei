@@ -65,7 +65,7 @@ export class LoginComponent {
     this.loginService$.login().subscribe((res: any) => {
       if (!!res.name) {
         sessionStorage.setItem('token', res.name);
-        this.router.navigate(['deii'])
+        this.router.navigate(['detecciones'])
       } else {
         alert("error de logueo")
       }
